@@ -7,7 +7,7 @@ class Instructions
     @points = points
   end
 
-  def create
+  def create 
     str = ''
     point = Point.new(0, 0)
     @points.each do |p|
@@ -32,10 +32,10 @@ class Instructions
           point.y = point.y - 1
           next
         end
-      str += 'D'
       end
+      str += 'D'
     end
     str
   end
-  
+
 end
