@@ -1,4 +1,4 @@
-class ArgumentsValidator
+module ArgumentsValidator
   def validates_points(field, points)
     field = field.split('x').map { |i| i.to_i }
     (0..points.size - 1).each do |i|
