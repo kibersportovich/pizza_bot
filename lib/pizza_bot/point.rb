@@ -9,4 +9,8 @@ class Point
   def !=(other)
     (@x != other.x or @y != other.y)
   end
+
+  def ==(other)
+    (@x == other.x && @y == other.y)
+  end
 end
