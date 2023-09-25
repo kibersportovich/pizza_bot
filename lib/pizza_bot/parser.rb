@@ -2,7 +2,7 @@ require_relative 'validations/points_validator'
 require_relative 'point'
 
 class Parser
-  include ArgumentsValidator
+  extend ArgumentsValidator
 
   def self.call(str)
     str = str.split(' ', 2)

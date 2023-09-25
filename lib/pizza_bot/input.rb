@@ -1,7 +1,7 @@
 require_relative 'validations/string_validator'
 
 class Input
-  include StringValidator
+  extend StringValidator
   def self.call
     str = if ARGV.size.positive?
             ARGV.join(' ')

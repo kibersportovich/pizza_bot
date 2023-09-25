@@ -4,10 +4,11 @@ require_relative 'pizza_bot/version'
 require_relative 'pizza_bot/program'
 
 module PizzaBot
-  def call
+  def self.call
     Program.call
   end
-
   class Error < StandardError; end
   # Your code goes here...
 end
+
+PizzaBot::call()
