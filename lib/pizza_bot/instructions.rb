@@ -3,14 +3,11 @@
 require_relative 'point'
 
 class Instructions
-  def initialize(points)
-    @points = points
-  end
 
-  def create 
+  def self.call(points)
     str = ''
     point = Point.new(0, 0)
-    @points.each do |p|
+    points.each do |p|
       while point != p
         if p.x != point.x && p.x > point.x
           str += 'E'
@@ -37,5 +34,4 @@ class Instructions
     end
     str
   end
-
 end

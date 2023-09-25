@@ -3,11 +3,8 @@ require_relative 'point'
 
 class Parser
   include ArgumentsValidator
-  def initialize(str)
-    @str = str
-  end
 
-  def get_points
+  def self.call(str)
     str = str.split(' ', 2)
     field = str[0]
     points = str[1].scan(/[0-9]+/).map { |i| i.to_i }

@@ -4,8 +4,8 @@ require_relative 'pizza_bot/version'
 require_relative 'pizza_bot/program'
 
 module PizzaBot
-  def call(*args)
-    Program.new(*args).call
+  def call
+    Program.call
   end
 
   class Error < StandardError; end

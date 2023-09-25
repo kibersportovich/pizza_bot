@@ -1,4 +1,3 @@
 class Program
-  def initialize(*args)
-  end
+  def self.call; end
 end
