@@ -1,4 +1,5 @@
 class Output
-  def initialize(str)
+  def self.call(str)
+    p "инструкция для pizza bot: #{str}"
   end
 end
