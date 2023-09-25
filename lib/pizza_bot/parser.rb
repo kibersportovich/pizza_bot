@@ -1,10 +1,13 @@
 require_relative 'validations/points_validator'
+require_relative 'validations/string_validator'
 require_relative 'point'
 
 class Parser
   extend ArgumentsValidator
+  extend StringValidator
 
   def self.call(str)
+    validates_string str
     str = str.split(' ', 2)
     field = str[0]
     points = str[1].scan(/[0-9]+/).map { |i| i.to_i }
