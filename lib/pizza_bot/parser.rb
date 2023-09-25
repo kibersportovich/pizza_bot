@@ -1,4 +1,4 @@
-require_relative 'validations/points_validator'
+require_relative 'validations/arguments_validator'
 require_relative 'validations/string_validator'
 require_relative 'point'
 
