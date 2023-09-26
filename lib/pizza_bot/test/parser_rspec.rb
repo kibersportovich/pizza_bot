@@ -14,8 +14,44 @@ describe Parser do
     expect(Parser.call('5x5 (1, 3) (4, 4)'))
       .to eq test1
   end
+  it 'should do ok for  5x5 (1, 3)(4, 4)' do
+    expect(Parser.call('5x5 (1, 3)(4, 4)'))
+      .to eq test1
+  end
+  it 'should do ok for  5x5 (1, 3), (4, 4)' do
+    expect(Parser.call('5x5 (1, 3), (4, 4)'))
+      .to eq test1
+  end
   it 'should do ok for  5x5 (0, 0) (1, 3) (4,4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)' do
     expect(Parser.call('5x5 (0, 0) (1, 3) (4,4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)'))
       .to eq test2
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('5xx5 (1, 3) (4, 4)') }
+      .to raise_error ArgumentError
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('5x5(1, 3) (4, 4)') }
+      .to raise_error ArgumentError
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('5x5 (1, 3) (4, )') }
+      .to raise_error ArgumentError
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('5x5 (1, 3) (4, 5') }
+      .to raise_error ArgumentError
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('5x5') }
+      .to raise_error ArgumentError
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('5x5 (6, 4)') }
+      .to raise_error ArgumentError
+  end
+  it 'return ArgumentError' do
+    expect { Parser.call('0x1 (0, 0)') }
+      .to raise_error ArgumentError
   end
 end
